@@ -7,8 +7,19 @@ function windowLoaded() {
   var context = canvas.getContext('2d');
 
   var text = "M";
+  var logoWhite = new Image();
+  var logoBlue = new Image();
+  var logoRed = new Image();
+  logoWhite.src = '../img/logo-white.png';
+  logoBlue.src = '../img/logo-blue.png';
+  logoRed.src = '../img/logo-red.png';
+
+  // var xPosition = (canvas.width / 2);
+  // var yPosition = (canvas.height / 2);
+
   var xPosition = (canvas.width / 2);
-  var yPosition = (canvas.height / 2);
+  var yPosition = (0);
+
 
   var imageObjShadow = new Image();
   //  var imageObj = new Image();
@@ -25,7 +36,7 @@ function windowLoaded() {
     }, Math.random() * 1000)
   }
   function glitch() {
-    imageObjShadow.onload = function () {
+    imageObjShadow.onload = function () { 
       context.clearRect(0, 0, canvas.width, canvas.height);
       var arr = lineShadowsHeight();
       var sy = 0;
@@ -74,7 +85,8 @@ function windowLoaded() {
     context.fillStyle = "#FFFFFF";
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillText(text, xPosition, yPosition);
+    context.drawImage(logoWhite, xPosition + 2, yPosition);
+    // context.fillText(text, xPosition, yPosition);
   }
 
   function getRandomInt(min, max) {
@@ -112,25 +124,29 @@ function windowLoaded() {
 
   function getShadowsTxt() {
     context.save();
-    context.font = "bold 80px Roboto Condensed";
-    context.textAlign = "center";
-    context.textBaseline = "middle";
+    // context.font = "bold 80px Roboto Condensed";
+    // context.textAlign = "center";
+    // context.textBaseline = "middle";
     context.globalCompositeOperation = "destination-over";
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.fillStyle = "#a3004a";
-    context.fillText(text, xPosition - 2, yPosition);
-    context.fillStyle = "#09c4de";
-    context.fillText(text, xPosition + 2, yPosition);
+    // context.fillStyle = "#a3004a";
+    // context.fillText(text, xPosition - 2, yPosition);
+    context.drawImage(logoBlue, xPosition - 2, yPosition);
+    // context.fillStyle = "#09c4de";
+    // context.fillText(text, xPosition + 2, yPosition);
+    context.drawImage(logoRed, xPosition + 2, yPosition);
+
     context.restore();
 
     imageDataShadows = canvas.toDataURL("image/png", 1.0);
   }
 
-  function getShadowsImg() {
-    context.save();
-    context.globalCompositeOperation = "destination-over";
-
-  }
+  // function getShadowsImg() {
+  //   context.save();
+  //   context.globalCompositeOperation = "destination-over";
+  //   context.drawImage(logoWhite, 0, 0);
+  //   context.restore();
+  // }
 
   getShadowsTxt();
   context.clearRect(0, 0, canvas.width, canvas.height);
