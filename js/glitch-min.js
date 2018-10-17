@@ -1,1 +1,90 @@
-function windowLoaded(){function t(){window.setTimeout(function(){e(),t()},1e3*Math.random())}function e(){l.onload=function(){n.clearRect(0,0,o.width,o.height);for(var t=v(),e=0,h=0;h<t.length;h++)n.drawImage(this,0,e,o.width,t[h],i(-2*s(),2*s()),e,o.width,t[h]),e+=t[h];a(),imageDataWithShadow=o.toDataURL("image/png",1),u.onload=function(){n.clearRect(0,0,o.width,o.height),n.drawImage(this,0,0,o.width,o.height/3+5,1,0,o.width,o.height/3+5),n.drawImage(this,0,o.height/3+5,o.width,o.height/3-5,0,o.height/3+5,o.width,o.height/3-5),n.drawImage(this,0,o.height/3*2,o.width,o.height/3,0,o.height/3*2,o.width,o.height/3)},u.src=imageDataWithShadow},l.src=imageDataShadows,setTimeout(function(){u.onload=function(){n.clearRect(0,o.height/3*2,o.width,o.height/3);for(var t=v(),e=0,a=0;a<t.length;a++)n.drawImage(this,0,e,o.width,t[a],i(-2*s(),2*s()),e,o.width,t[a]),e+=t[a]},u.src=imageDataWithShadow},80),setTimeout(function(){n.clearRect(0,0,o.width,o.height),a()},i(80,300))}function a(){n.font="normal 80px Roboto Condensed",n.fillStyle="#FFFFFF",n.textAlign="center",n.textBaseline="middle",n.drawImage(r,m+2,c)}function i(t,e){return Math.floor(Math.random()*(e-t+1)+t)}function h(){n.save(),n.globalCompositeOperation="destination-over",n.clearRect(0,0,o.width,o.height),n.drawImage(g,m-2,c),n.drawImage(w,m+2,c),n.restore(),imageDataShadows=o.toDataURL("image/png",1)}var o=document.getElementById("myCanvas"),n=o.getContext("2d"),d="M",r=new Image,g=new Image,w=new Image;r.src="../img/logo-white.png",g.src="../img/logo-blue.png",w.src="../img/logo-red.png";var m=o.width/2,c=0,l=new Image,u=new Image;o.addEventListener("mouseover",t,!1),t();var f=function(){return Math.floor(4*Math.random()+4)},s=function(){return.8*Math.floor(2*Math.random()+2)},I=function(){var t=300,e=80;return Math.floor(221*Math.random()+80)},v=function(){for(var t=o.height,e=f(),a=[],i=0,h=0;h<e;h++)a[h]=Math.floor(Math.random()*(t/(e-1)-2+1)+2),t-=a[h],i+=a[h],a[e]=o.height-i;return a};h(),n.clearRect(0,0,o.width,o.height),a()}window.addEventListener("load",windowLoaded,!1);
+
+var
+  canvas, ctx,
+  logoWhite, logoBlue, logoRed,
+  xPosition, yPosition,
+  imageObjShadow, imageObjWithShadow
+  ;
+
+canvas = document.getElementById('myCanvas');
+ctx = canvas.getContext('2d');
+logoWhite = new Image();
+logoBlue = new Image();
+logoRed = new Image();
+logoWhite.src = '../img/logo-white.png';
+logoBlue.src = '../img/logo-blue.png';
+logoRed.src = '../img/logo-red.png';
+
+imageObjShadow = new Image();
+imageObjWithShadow = new Image();
+
+xPosition = (canvas.width / 2) - 67; // 67 = logo size / 2
+yPosition = 0;
+
+canvas.addEventListener('click', drawText, false);
+window.addEventListener('load', windowLoaded, false);
+
+function windowLoaded() {
+  getShadowsTxt();
+  gfctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawText();
+}
+
+function glitch() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(logoWhite, xPosition, yPosition);
+  var arr = lineShadowsHeight();
+  var sy = 0;
+  for (var i = 0; i < arr.length; i++) {
+    ctx.drawImage(this, 0, sy, canvas.width, arr[i], getRandomInt(-2 * offset(), 2 * offset()), sy, canvas.width, arr[i]);
+    sy = sy + arr[i];
+  }
+}
+
+function drawText() {
+  ctx.drawImage(logoWhite, xPosition, yPosition);
+}
+
+function getShadowsTxt() {
+  ctx.save();
+  ctx.globalCompositeOperation = "destination-over";  //  ???
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(logoBlue, xPosition - 4, yPosition);
+  ctx.drawImage(logoRed, xPosition + 4, yPosition);
+  imageDataShadows = canvas.toDataURL("image/png", 1.0);
+  ctx.restore();
+
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+var glitchLinesAmount = function () {
+  return Math.floor((Math.random() * 4) + 4);
+};
+
+var offset = function () {
+  return Math.floor((Math.random() * 2) + 2);
+}
+
+var lineShadowsHeight = function () {
+  var h = canvas.height;
+  var count = glitchLines();
+  var arr = [];
+  var s = 0;
+  console.log("-------------------------");
+
+  for (var i = 0; i < count; i++) {
+    arr[i] = Math.floor(Math.random() * (h / (count - 1) - 1) + 2);
+    h = h - arr[i];
+    s = s + arr[i];
+    arr[count] = canvas.height - s;
+    console.log("arr[i]: " + arr[i]);
+    console.log("h: " + h);
+    console.log("s: " + s);
+    console.log("arr[count]: " + arr[count]);
+  }
+  return arr;
+}
+

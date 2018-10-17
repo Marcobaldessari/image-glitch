@@ -52,7 +52,7 @@
 	"\/js\/glitch copy.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/js\/glitch copy-min.js",
 		"oF": 0,
@@ -62,7 +62,7 @@
 	"\/js\/glitch-min.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/js\/glitch-min-min.js",
 		"oF": 0,
@@ -72,25 +72,15 @@
 	"\/js\/glitch.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/js\/glitch-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/style\/style-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/style\/style-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"\/style\/style.css": {
-		"aP": 1,
+		"aP": 0,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
@@ -106,7 +96,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 561049779,
-	"displayValue": "Glitch",
+	"displayValue": "Glitch rebuilt",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets_teal",
 	"iconImageWasSetByUser": 0
@@ -1506,7 +1496,7 @@
 	"esLintSourceType": 0,
 	"externalServerAddress": "http:\/\/localhost:8888",
 	"gitIgnoreBuildFolder": 1,
-	"hideConfigFile": 0,
+	"hideConfigFile": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {
 		"asi": {
@@ -1878,7 +1868,7 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"outputStyle": 3,
-		"shouldRunAutoprefixer": 1,
+		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0
 		},
 	"languageDefaultsGIF": {
@@ -1923,7 +1913,7 @@
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"syntaxCheckerStyle": 3,
 		"transpilerStyle": 0
 		},
