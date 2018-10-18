@@ -106,7 +106,7 @@ var glitchLinesAmount = function () {
 };
 
 var offset = function () {
-  return Math.floor((Math.random() * 5) + 2);
+  return Math.floor((Math.random() * 30) );
 }
 
 var lineShadowsHeight = function () {
@@ -133,5 +133,5 @@ function loop() {
   window.setTimeout(function(){
     glitch();
     loop();
-  }, Math.random() * 2000)
+  }, Math.random() * 1000)
 }
