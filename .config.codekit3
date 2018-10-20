@@ -9,6 +9,240 @@
 	],
 "creatorBuild": "26680",
 "files": {
+	"\/android-icon-144x144.png": {
+		"ft": 32768,
+		"iS": 1528,
+		"oA": 0,
+		"oAP": "\/android-icon-144x144.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/android-icon-192x192.png": {
+		"ft": 32768,
+		"iS": 1288,
+		"oA": 0,
+		"oAP": "\/android-icon-192x192.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/android-icon-36x36.png": {
+		"ft": 32768,
+		"iS": 852,
+		"oA": 0,
+		"oAP": "\/android-icon-36x36.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/android-icon-48x48.png": {
+		"ft": 32768,
+		"iS": 922,
+		"oA": 0,
+		"oAP": "\/android-icon-48x48.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/android-icon-72x72.png": {
+		"ft": 32768,
+		"iS": 1059,
+		"oA": 0,
+		"oAP": "\/android-icon-72x72.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/android-icon-96x96.png": {
+		"ft": 32768,
+		"iS": 1198,
+		"oA": 0,
+		"oAP": "\/android-icon-96x96.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-114x114.png": {
+		"ft": 32768,
+		"iS": 1318,
+		"oA": 0,
+		"oAP": "\/apple-icon-114x114.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-120x120.png": {
+		"ft": 32768,
+		"iS": 1349,
+		"oA": 0,
+		"oAP": "\/apple-icon-120x120.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-144x144.png": {
+		"ft": 32768,
+		"iS": 1528,
+		"oA": 0,
+		"oAP": "\/apple-icon-144x144.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-152x152.png": {
+		"ft": 32768,
+		"iS": 1640,
+		"oA": 0,
+		"oAP": "\/apple-icon-152x152.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-180x180.png": {
+		"ft": 32768,
+		"iS": 1913,
+		"oA": 0,
+		"oAP": "\/apple-icon-180x180.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-57x57.png": {
+		"ft": 32768,
+		"iS": 947,
+		"oA": 0,
+		"oAP": "\/apple-icon-57x57.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-60x60.png": {
+		"ft": 32768,
+		"iS": 987,
+		"oA": 0,
+		"oAP": "\/apple-icon-60x60.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-72x72.png": {
+		"ft": 32768,
+		"iS": 1059,
+		"oA": 0,
+		"oAP": "\/apple-icon-72x72.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-76x76.png": {
+		"ft": 32768,
+		"iS": 1073,
+		"oA": 0,
+		"oAP": "\/apple-icon-76x76.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon-precomposed.png": {
+		"ft": 32768,
+		"iS": 1772,
+		"oA": 0,
+		"oAP": "\/apple-icon-precomposed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/apple-icon.png": {
+		"ft": 32768,
+		"iS": 1772,
+		"oA": 0,
+		"oAP": "\/apple-icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/browserconfig.xml": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/browserconfig.xml",
+		"oF": 0
+		},
+	"\/favicon-16x16.png": {
+		"ft": 32768,
+		"iS": 733,
+		"oA": 0,
+		"oAP": "\/favicon-16x16.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/favicon-32x32.png": {
+		"ft": 32768,
+		"iS": 847,
+		"oA": 0,
+		"oAP": "\/favicon-32x32.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/favicon-96x96.png": {
+		"ft": 32768,
+		"iS": 1198,
+		"oA": 0,
+		"oAP": "\/favicon-96x96.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/favicon.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/favicon.ico",
+		"oF": 0
+		},
 	"\/img\/logo-blue.png": {
 		"ft": 32768,
 		"iS": 3746,
@@ -17,6 +251,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/logo-blue@2x.png": {
+		"ft": 32768,
+		"iS": 4087,
+		"oA": 0,
+		"oAP": "\/img\/logo-blue@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -31,6 +276,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/img\/logo-red@2x.png": {
+		"ft": 32768,
+		"iS": 4385,
+		"oA": 0,
+		"oAP": "\/img\/logo-red@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/img\/logo-white.png": {
 		"ft": 32768,
 		"iS": 3150,
@@ -42,22 +298,23 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/img\/logo-white@2x.png": {
+		"ft": 32768,
+		"iS": 3806,
+		"oA": 0,
+		"oAP": "\/img\/logo-white@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/index.html",
 		"oF": 0
-		},
-	"\/js\/glitch copy.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/js\/glitch copy-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		},
 	"\/js\/glitch-min.js": {
 		"ft": 64,
@@ -79,6 +336,85 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/js\/hidpi-canvas.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/js\/hidpi-canvas.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/manifest.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/manifest-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/ms-icon-144x144.png": {
+		"ft": 32768,
+		"iS": 1528,
+		"oA": 0,
+		"oAP": "\/ms-icon-144x144.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ms-icon-150x150.png": {
+		"ft": 32768,
+		"iS": 1589,
+		"oA": 0,
+		"oAP": "\/ms-icon-150x150.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ms-icon-310x310.png": {
+		"ft": 32768,
+		"iS": 4591,
+		"oA": 0,
+		"oAP": "\/ms-icon-310x310.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/ms-icon-70x70.png": {
+		"ft": 32768,
+		"iS": 1029,
+		"oA": 0,
+		"oAP": "\/ms-icon-70x70.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/serveHidpi": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/serveHidpi",
+		"oF": 0
+		},
+	"\/style\/style-min.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/style\/style-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/style\/style.css": {
 		"aP": 0,
 		"bl": 0,
@@ -97,7 +433,7 @@
 "projectAttributes": {
 	"creationDate": 561049779,
 	"displayValue": "Glitch rebuilt",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_teal",
 	"iconImageWasSetByUser": 0
 	},
