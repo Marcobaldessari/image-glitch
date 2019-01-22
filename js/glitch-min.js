@@ -1,28 +1,32 @@
 
 var
   canvas, ctx, dpr,
-  logoWhite, logoBlue, logoRed,
+  logoWhite, shadowLeft, shadowRight,
   xPosition, yPosition,
   imageObjShadow, imageObjWithShadow,
-  imageDataShadows, imageDataWithShadow
+  imageDataShadows, imageDataWithShadow,
+  options
   ;
+
+options = {
+  translate_frequency: 1000,
+}
 
 canvas = document.getElementById('myCanvas');
 ctx = canvas.getContext('2d');
 dpr = 1/ (window.devicePixelRatio || 1);
 logoWhite = new Image();
-logoBlue = new Image();
-logoRed = new Image();
-logoWhite.src = '../img/logo-white@2x.png';
-logoBlue.src = '../img/logo-blue@2x.png';
-logoRed.src = '../img/logo-red@2x.png';
+shadowLeft = new Image();
+shadowRight = new Image();
+logoWhite.src = 'img/logo-white@2x.png';
+shadowLeft.src = 'img/shadow-left@2x.png';
+shadowRight.src = 'img/shadow-right@2x.png';
 
 imageObjShadow = new Image();
 imageObjWithShadow = new Image();
 
 
 
-canvas.addEventListener('click', glitch, false);
 window.addEventListener('load', windowLoaded, false);
 
 function windowLoaded() {
@@ -94,8 +98,8 @@ function getShadowsImg() {
   ctx.save();
   ctx.globalCompositeOperation = "destination-over";  //  ???
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(logoBlue, xPosition - getRandomInt(2, 10), yPosition);
-  ctx.drawImage(logoRed, xPosition + getRandomInt(2, 10), yPosition);
+  ctx.drawImage(shadowLeft, xPosition - getRandomInt(2, 10), yPosition);
+  ctx.drawImage(shadowRight, xPosition + getRandomInt(2, 10), yPosition);
   imageDataShadows = canvas.toDataURL("image/png", 1.0);
   ctx.restore();
 }
@@ -136,6 +140,6 @@ function loop() {
   window.setTimeout(function () {
     glitch();
     loop();
-  }, Math.random() * 1000)
+  }, Math.random() * options.translate_frequency)
 }
 
