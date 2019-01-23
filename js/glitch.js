@@ -1,6 +1,7 @@
 
 var
-  canvas, ctx, dpr,
+  img, glitch_1,
+  canvas, dpr,
   logoWhite, shadowLeft, shadowRight,
   xPosition, yPosition,
   imageObjShadow, imageObjWithShadow,
@@ -12,6 +13,7 @@ options = {
   translate_frequency: 1000,
 }
 
+imgAll = document.querySelector('.glitched');
 canvas = document.getElementById('myCanvas');
 ctx = canvas.getContext('2d');
 dpr = 1/ (window.devicePixelRatio || 1);
@@ -31,70 +33,83 @@ window.addEventListener('load', windowLoaded, false);
 
 function windowLoaded() {
   // ctx.scale(dpr, dpr);
-  drawDefaultImage();
+  
   loop();
   xPosition = (canvas.width / 2) - logoWhite.naturalWidth / 2;
   yPosition = 0;
   console.log(logoWhite.naturalWidth / 2)
 
+  glitch_1 = new Glitch(imgAll);
 }
 
-function glitch() {
-  getShadowsImg();
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  imageObjShadow.onload = function () {
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(logoWhite, xPosition, yPosition);
-    var arr = lineShadowsHeight();
-    var sy = 0;
-    for (var i = 0; i < arr.length; i++) {
-      ctx.drawImage(this, 0, sy, canvas.width, arr[i], getRandomInt(-2 * offset(), 2 * offset()), sy, canvas.width, arr[i]);
-      sy = sy + arr[i];
-    }
-    drawDefaultImage();
-
-    imageDataWithShadow = canvas.toDataURL("image/png", 1.0);
-
-    imageObjWithShadow.onload = function () {
-      
+function Glitch(img) {
+  this.canvas = document.createElement("canvas");
+  this.canvas.width = img.width/2; //divided by two to keep image crisp on high density display
+  this.canvas.height = img.height/2;
+  this.ctx = this.canvas.getContext('2d');
+  drawDefaultImage(this.ctx);
+  
+  this.glitchLoop = function() {
+    getShadowsImg(this.ctx);
+    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+    imageObjShadow.onload = function () {
+  
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(this, 0, 0, canvas.width, canvas.height / 3 + 5, 1, 0, canvas.width, canvas.height / 3 + 5);
-      ctx.drawImage(this, 0, canvas.height / 3 + 5, canvas.width, canvas.height / 3 - 5, 0, canvas.height / 3 + 5, canvas.width, canvas.height / 3 - 5);
-      ctx.drawImage(this, 0, (canvas.height / 3) * 2, canvas.width, canvas.height / 3, 0, (canvas.height / 3) * 2, canvas.width, canvas.height / 3);
-    }
-    imageObjWithShadow.src = imageDataWithShadow;
-  }
-  imageObjShadow.src = imageDataShadows;
-
-
-  setTimeout(function () {
-    imageObjWithShadow.onload = function () {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // ctx.clearRect(0, (canvas.height / 3) * 2, canvas.width, canvas.height / 3);
+      ctx.drawImage(logoWhite, xPosition, yPosition);
       var arr = lineShadowsHeight();
-      // console.log(arr);
       var sy = 0;
       for (var i = 0; i < arr.length; i++) {
         ctx.drawImage(this, 0, sy, canvas.width, arr[i], getRandomInt(-2 * offset(), 2 * offset()), sy, canvas.width, arr[i]);
         sy = sy + arr[i];
       }
+      drawDefaultImage(this.ctx);
+  
+      imageDataWithShadow = canvas.toDataURL("image/png", 1.0);
+  
+      imageObjWithShadow.onload = function () {
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(this, 0, 0, canvas.width, canvas.height / 3 + 5, 1, 0, canvas.width, canvas.height / 3 + 5);
+        ctx.drawImage(this, 0, canvas.height / 3 + 5, canvas.width, canvas.height / 3 - 5, 0, canvas.height / 3 + 5, canvas.width, canvas.height / 3 - 5);
+        ctx.drawImage(this, 0, (canvas.height / 3) * 2, canvas.width, canvas.height / 3, 0, (canvas.height / 3) * 2, canvas.width, canvas.height / 3);
+      }
+      imageObjWithShadow.src = imageDataWithShadow;
     }
-    imageObjWithShadow.src = imageDataWithShadow;
-  }, 80);
+    imageObjShadow.src = imageDataShadows;
+  
+  
+    setTimeout(function () {
+      imageObjWithShadow.onload = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // ctx.clearRect(0, (canvas.height / 3) * 2, canvas.width, canvas.height / 3);
+        var arr = lineShadowsHeight();
+        // console.log(arr);
+        var sy = 0;
+        for (var i = 0; i < arr.length; i++) {
+          ctx.drawImage(this, 0, sy, canvas.width, arr[i], getRandomInt(-2 * offset(), 2 * offset()), sy, canvas.width, arr[i]);
+          sy = sy + arr[i];
+        }
+      }
+      imageObjWithShadow.src = imageDataWithShadow;
+    }, 80);
+  
+    setTimeout(function () {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawDefaultImage();
+    }, getRandomInt(80, 500));
+  }
+  
 
-  setTimeout(function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawDefaultImage();
-  }, getRandomInt(80, 500));
 }
 
-function drawDefaultImage() {
-  ctx.drawImage(logoWhite, xPosition, yPosition);
+
+function drawDefaultImage(ctx) {
+  this.ctx.drawImage(logoWhite, xPosition, yPosition);
 }
 
-function getShadowsImg() {
+function getShadowsImg(ctx) {
   ctx.save();
   ctx.globalCompositeOperation = "destination-over";  //  ???
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -138,7 +153,7 @@ var lineShadowsHeight = function () {
 
 function loop() {
   window.setTimeout(function () {
-    glitch();
+    glitch_1.glitchLoop();
     loop();
   }, Math.random() * options.translate_frequency)
 }
